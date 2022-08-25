@@ -1,4 +1,5 @@
  import "./login.css"
+ import { BrowserRouter as Router, Link } from "react-router-dom";
 
 
 
@@ -15,7 +16,7 @@ function Login() {
                     <i className="uil uil-lock icon"></i><input type="password" required placeholder="Enter Your Password:" />
                 </div>
                 <button type="submit" value="Submit">Login</button>
-                <h2>Don't have an account ? <a href="">SignUp Now</a> </h2>
+                <h2>Don't have an account ? <Link to="/register">SignUp Now</Link> </h2>
 
 
 

@@ -1,13 +1,38 @@
 import React from 'react';
 import { useForm, Resolver } from 'react-hook-form';
 import {useState, useEffect} from 'react'
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./register.css"
 
 
 function Register(){
-    const {register, handleSubmit, watch, formState:{errors} }= useForm()
-    const onSubmit = data => console.log(data);
-  
+    const {register, handleSubmit, }= useForm()
+    const [errors, setErrors]=useState();
+    const [alert ,setAlert]=useState();
+    const [toggle ,setToggle]=useState(false);
+    // const onSubmit = data => console.log(data.password2);
+    const onSubmit = data =>{ 
+        localStorage.setItem('Email', JSON.stringify(data.email));
+        localStorage.setItem('Password', JSON.stringify(data.password));
+        localStorage.setItem('Password2', JSON.stringify(data.password2));
+        let psw = localStorage.getItem('Password');
+        let psw2 = localStorage.getItem('Password2');
+        if(psw!==psw2){
+            setErrors("Passwords Dont Match")
+            setToggle(true)
+            
+
+        }else{
+           setAlert("Registration Completed! Sign in ")
+           setToggle(false)
+        }
+
+    
+    
+    };
+   
+   
+   
 
    
     return (
@@ -27,9 +52,11 @@ function Register(){
                 <div className="input-field">
                     <i className="uil uil-lock icon"></i><input type="password" id="password2" 
                     {...register("password2")} required placeholder="Confirm Your Password:" />
+                    <p className='error'>{errors}</p>
                 </div>
-                <button type="submit" value="Submit">Register</button>
-                <h2>Are you already a member ? <a href="">Sign In</a> </h2>
+                <button type="submit" value="Submit" disabled={toggle} >Register</button>
+                <p>{alert}</p>
+                <h2>Are you already a member ? <Link to="/">Sign In</Link> </h2>
 
 
 
