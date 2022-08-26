@@ -45,6 +45,7 @@ function Login() {
 
 
     return (
+        <section className="sectioni">
         <div className="container">
             <form onSubmit={handleSubmit(login)}>
                 <h1>Login</h1>
@@ -77,6 +78,7 @@ function Login() {
 
 
         </div>
+        </section>
 
     )
 }

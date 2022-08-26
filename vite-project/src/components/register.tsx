@@ -42,6 +42,7 @@ function Register(){
 
    
     return (
+        <section className='registersec'>
         <div className="container">
             <form id='form' className='registerForm' onSubmit={handleSubmit(onSubmit)}>
                 
@@ -82,6 +83,7 @@ function Register(){
 
 
         </div>
+        </section>
     )
 
 }

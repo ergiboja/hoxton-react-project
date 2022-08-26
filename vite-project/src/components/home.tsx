@@ -33,12 +33,13 @@ function Home() {
     
    
     return (
+        <div className="homepage">
    
     
         
         
         
-        
+        <section className="homesection">
         
                 <section className="products-container ">
                     <ul className="products-container__list">
@@ -65,6 +66,8 @@ function Home() {
         
                     </ul>
                 </section>
+                </section>
+                </div>
         
          
 
