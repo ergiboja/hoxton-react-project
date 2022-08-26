@@ -20,7 +20,7 @@ function Upload() {
     )
     const file = await res.json()
 
-    setImage(file.secure_url)
+  
     setLoading(false)
   }
 
