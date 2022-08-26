@@ -3,8 +3,11 @@ import React from "react";
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom'
 import {useEffect, useState} from 'react'
+import { Navigate, useNavigate} from "react-router-dom";
+import Upload from "./upload";
 
 function Home() {
+    const navigate = useNavigate();
     
     const [product, setProduct] = useState<any[]>([]
                 
@@ -29,9 +32,8 @@ function Home() {
     
     
         console.log(product)
+       
     
-    
-   
     return (
         <div className="homepage">
    
@@ -42,9 +44,7 @@ function Home() {
         <section className="homesection">
         
                 <section className="products-container ">
-                    <button onClick={()=>{
-                        console.log("testt")
-                    }} >Add item</button>
+                    <Link to="/upload">Add item</Link> 
                     <ul className="products-container__list">
                     {product.map((producti,i) =>  
         
