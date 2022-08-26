@@ -42,6 +42,9 @@ function Home() {
         <section className="homesection">
         
                 <section className="products-container ">
+                    <button onClick={()=>{
+                        console.log("testt")
+                    }} >Add item</button>
                     <ul className="products-container__list">
                     {product.map((producti,i) =>  
         

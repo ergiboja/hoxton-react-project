@@ -7,12 +7,13 @@ import logo from './logo.svg'
 import Login from './components/login'
 import Register from './components/register'
 import Home from './components/home';
-import Header from './header';
+
 
 
 
 
 import './App.css'
+import Upload from './components/upload';
 
 function App() {
   
@@ -28,7 +29,8 @@ function App() {
       
       <Route path='/register' element={Register()}/>
      
-      <Route path='home' element={Home()}/>
+      <Route path='/home' element={Home()}/>
+      <Route path='/upload' element={Upload()}/>
 
       
       </Routes>
