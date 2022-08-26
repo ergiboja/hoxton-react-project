@@ -1,17 +1,14 @@
-*{
+/* *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
-  body{
+  body {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image:url("./resources/44.jpg") ;
-    background-size: cover;
-    background-repeat: no-repeat;
   
   }
   
@@ -92,4 +89,4 @@
     font-family:'Poppins', sans-serif;
     font-size: 10px;
     font-weight: bold;
-  }
+  } */
