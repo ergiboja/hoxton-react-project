@@ -1,7 +1,10 @@
-import "./home.css"
+import "./home.css";
 
-function home(){
-    return(
-        <h1>home</h1>
+function Home() {
+    return (
+       <h1>hhhheheheheh</h1>
+        
+
     )
 }
+export default Home 

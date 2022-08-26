@@ -15,16 +15,22 @@ function Register(){
         localStorage.setItem('Email', JSON.stringify(data.email));
         localStorage.setItem('Password', JSON.stringify(data.password));
         localStorage.setItem('Password2', JSON.stringify(data.password2));
-        let psw = localStorage.getItem('Password');
-        let psw2 = localStorage.getItem('Password2');
-        if(psw!==psw2){
-            setErrors("Passwords Dont Match")
+        let psw = data.password 
+        let psw2= data.password2 
+
+        
+        if(psw===psw2){
+            setAlert("Registration Completed! Sign in ");
+            
             setToggle(true)
+          
+            
             
 
         }else{
-           setAlert("Registration Completed! Sign in ")
-           setToggle(false)
+            setErrors("Passwords Dont Match");
+       
+            
         }
 
     
@@ -46,11 +52,11 @@ function Register(){
                      {...register("email")} required placeholder="Enter Your Email:"/>
                 </div>
                 <div className="input-field">
-                    <i className="uil uil-lock icon"></i><input type="password" id="password" 
+                    <i className="uil uil-lock icon"></i><input type="password" id="password" minLength={4}
                     {...register("password")} required placeholder="Enter Your Password:" />
                 </div>
                 <div className="input-field">
-                    <i className="uil uil-lock icon"></i><input type="password" id="password2" 
+                    <i className="uil uil-lock icon"></i><input type="password" id="password2" minLength={4}
                     {...register("password2")} required placeholder="Confirm Your Password:" />
                     <p className='error'>{errors}</p>
                 </div>
