@@ -5,6 +5,7 @@ import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom'
 import {useEffect, useState} from 'react'
 import { Navigate, useNavigate} from "react-router-dom";
 import Upload from "./upload";
+import Login from "./login";
 
 function Home() {
     const navigate = useNavigate();
@@ -45,6 +46,7 @@ function Home() {
         
                 <section className="products-container ">
                     <Link to="/upload">Add item</Link> 
+                    <Link to="/">Logout</Link> 
                     <ul className="products-container__list">
                     {product.map((producti,i) =>  
         
